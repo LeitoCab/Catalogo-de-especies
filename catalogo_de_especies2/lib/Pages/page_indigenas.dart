@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Flora extends StatefulWidget {
-  const Flora({super.key});
+class Indigenas extends StatefulWidget {
+  const Indigenas({super.key});
 
   @override
-  State<Flora> createState() => _FloraState();
+  State<Indigenas> createState() => _IndigenasState();
 }
 
-class _FloraState extends State<Flora> {
+class _IndigenasState extends State<Indigenas> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
         title: new Text(
-          'Flora',
+          'Pueblos Indigenas',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color(0xe552c084),

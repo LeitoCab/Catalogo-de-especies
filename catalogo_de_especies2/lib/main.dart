@@ -1,5 +1,8 @@
-import 'package:catalogo_de_especies2/botones/boton_flora.dart';
+import 'package:catalogo_de_especies2/Pages/page_flora.dart';
 import 'package:flutter/material.dart';
+import 'package:catalogo_de_especies2/home_botons.dart';
+import 'package:catalogo_de_especies2/Pages/page_fauna.dart';
+import 'package:catalogo_de_especies2/Pages/page_indigenas.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'boton_flora',
+      initialRoute: 'page_flora',
       routes: <String, WidgetBuilder>{
         'main': (BuildContext context) => const Flora(),
       },
@@ -81,47 +84,41 @@ class HomePage extends StatelessWidget {
             ),
             Stack(children: [
               Opacity(
-                opacity: 0.5,
+                opacity: 0.6,
                 child: Image.asset(
                   'assets/Amazonia.jpg',
                 ),
               ),
-              Container(
-                  height: 184.0,
-                  width: 140.0,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/Flora.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(15.0)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(0),
-                    child: Positioned(
-                        top: 50.0,
-                        left: 30.0,
-                        child: ElevatedButton(
-                          child: Text('Boton'),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Flora(),
-                                ));
-                          },
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(15.0))),
-                              side: MaterialStateProperty.all(
-                                  BorderSide(width: 3.0, color: Colors.black)),
-                              elevation: MaterialStateProperty.all(0),
-                              backgroundColor: MaterialStateProperty.all(
-                                  Colors.transparent)),
-                        )),
+              Column(
+                children: <Widget>[
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        homeboton(
+                          imagen: 'assets/Flora.jpg',
+                          texto: 'Flora',
+                          presionar: Flora(),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                        ),
+                        homeboton(
+                          imagen: 'assets/fauna.jpg',
+                          texto: 'Fauna',
+                          presionar: Fauna(),
+                        )
+                      ]),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  Center(
+                      child: homeboton(
+                    imagen: 'assets/pueblos_indigenas.jpg',
+                    texto: 'Pueblos Indigenas',
+                    presionar: Indigenas(),
                   ))
+                ],
+              )
             ])
           ],
         ));
