@@ -87,6 +87,7 @@ class HomePage extends StatelessWidget {
                 opacity: 0.6,
                 child: Image.asset(
                   'assets/Amazonia.jpg',
+                  height: 490,
                 ),
               ),
               Column(

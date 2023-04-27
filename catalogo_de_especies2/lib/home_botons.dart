@@ -26,7 +26,7 @@ class homeboton extends StatelessWidget {
               child: Text(
                 texto,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 35, shadows: [
+                style: TextStyle(fontSize: 24.5, shadows: [
                   Shadow(
                       blurRadius: 5.0,
                       color: Colors.black,
