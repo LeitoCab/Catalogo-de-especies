@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Flora extends StatefulWidget {
@@ -11,15 +10,15 @@ class Flora extends StatefulWidget {
 class _FloraState extends State<Flora> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: new Text(
+        title: const Text(
           'Flora',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xe552c084),
+        backgroundColor: const Color(0xe552c084),
       ),
-      body: Center(child: Text('Hola')),
+      body: const Center(child: Text('Hola')),
     );
   }
 }
