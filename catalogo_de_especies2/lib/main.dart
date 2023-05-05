@@ -1,7 +1,7 @@
 import 'package:catalogo_de_especies2/Appbarinf.dart';
 import 'package:catalogo_de_especies2/Pages/page_flora.dart';
 import 'package:flutter/material.dart';
-import 'package:catalogo_de_especies2/home_botons.dart';
+import 'package:catalogo_de_especies2/Botons/home_botons.dart';
 import 'package:catalogo_de_especies2/Pages/page_fauna.dart';
 import 'package:catalogo_de_especies2/Pages/page_indigenas.dart';
 
@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'page_flora',
+      initialRoute: 'main.dart',
       routes: <String, WidgetBuilder>{
-        'main': (BuildContext context) => const Flora(),
+        'page_flora': (BuildContext context) => const Flora(),
+        'page_fauna': (BuildContext context) => const Fauna(),
+        'page_indigenas': (BuildContext context) => const Indigenas(),
       },
       home: HomePage(),
     );
@@ -30,7 +32,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Image.asset("assets/voluntariado.png", height: 24.0),
             Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const <Widget>[
@@ -51,15 +55,10 @@ class HomePage extends StatelessWidget {
                         color: Color(0xffffffff)),
                   ),
                 ]),
-            Expanded(
-              child: Image.asset(
-                'assets/voluntariado.png',
-              ),
-            ),
           ],
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         ],
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
         backgroundColor: const Color(0xe552c084),

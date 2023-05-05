@@ -10,15 +10,15 @@ class Indigenas extends StatefulWidget {
 class _IndigenasState extends State<Indigenas> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: new Text(
+        title: const Text(
           'Pueblos Indigenas',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xe552c084),
+        backgroundColor: const Color(0xe552c084),
       ),
-      body: Center(child: Text('Hola')),
+      body: const Center(child: Text('Hola')),
     );
   }
 }
