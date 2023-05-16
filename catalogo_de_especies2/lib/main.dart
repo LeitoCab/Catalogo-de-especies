@@ -30,6 +30,35 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Container(
+          color: const Color(0xe552c084),
+          child: Column(
+            children: [
+              Container(
+                width: 100.0,
+                height: 100.0,
+                margin: const EdgeInsets.only(top: 60.0, bottom: 30.0),
+                child: Image.asset("assets/Logo.png"),
+              ),
+              const Text(
+                "Catálogo de especies",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 30.0),
+                padding: const EdgeInsets.all(20.0),
+                width: double.infinity,
+                color: const Color(0x3300FF00),
+                child: const Text(
+                  "Flora",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,69 +89,71 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         ],
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
         backgroundColor: const Color(0xe552c084),
       ),
-      body: ListView(
-        children: [
-          Image.asset(
-            'assets/descarga.jpg',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Center(
-            child: Text(
-              'CATALOGO DE ESPECIES',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Stack(children: [
-            Opacity(
-              opacity: 0.6,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.6,
+                image: AssetImage("assets/Amazonia.jpg"),
+                fit: BoxFit.cover)),
+        child: ListView(
+          children: [
+            Expanded(
               child: Image.asset(
-                'assets/Amazonia.jpg',
-                height: 600,
+                'assets/descarga.jpg',
+                width: double.infinity,
               ),
             ),
-            Column(
-              children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      homeboton(
-                        imagen: 'assets/Flora.jpg',
-                        texto: 'Flora',
-                        presionar: Flora(),
-                      ),
-                      SizedBox(
-                        width: 30.0,
-                      ),
-                      homeboton(
-                        imagen: 'assets/fauna.jpg',
-                        texto: 'Fauna',
-                        presionar: Fauna(),
-                      )
-                    ]),
-                const SizedBox(
-                  height: 30.0,
+            const SizedBox(
+              height: 30,
+            ),
+            const Center(
+              child: Text(
+                'CATALOGO DE ESPECIES',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
-                const Center(
-                    child: homeboton(
-                  imagen: 'assets/pueblos_indigenas.jpg',
-                  texto: 'Pueblos Indigenas',
-                  presionar: Indigenas(),
-                ))
-              ],
-            )
-          ])
-        ],
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Stack(children: [
+              Column(
+                children: <Widget>[
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const [
+                        homeboton(
+                          imagen: 'assets/Flora.jpg',
+                          texto: 'Flora',
+                          presionar: Flora(),
+                        ),
+                        SizedBox(
+                          width: 30.0,
+                        ),
+                        homeboton(
+                          imagen: 'assets/fauna.jpg',
+                          texto: 'Fauna',
+                          presionar: Fauna(),
+                        )
+                      ]),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  const Center(
+                      child: homeboton(
+                    imagen: 'assets/pueblos_indigenas.jpg',
+                    texto: 'Pueblos Indigenas',
+                    presionar: Indigenas(),
+                  ))
+                ],
+              )
+            ])
+          ],
+        ),
       ),
       bottomNavigationBar: const MyBottomAppBar(
           web: "web.iiap.gob.pe",
