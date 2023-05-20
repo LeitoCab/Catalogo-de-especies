@@ -23,75 +23,75 @@ class _FaunaState extends State<Fauna> {
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
         backgroundColor: const Color(0xe552c084),
       ),
-      body: ListView(
-        children: [
-          Image.asset(
-            'assets/descarga.jpg',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Center(
-            child: Text(
-              'FAUNA',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.6,
+                image: AssetImage("assets/Amazonia.jpg"),
+                fit: BoxFit.cover)),
+        child: ListView(
+          children: [
+            Image.asset(
+              'assets/descarga.jpg',
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Center(
+              child: Text(
+                'FAUNA',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Stack(children: [
-            Opacity(
-              opacity: 0.6,
-              child: Image.asset(
-                'assets/Amazonia.jpg',
-                height: 600,
-              ),
+            const SizedBox(
+              height: 32,
             ),
-            Column(
-              children: <Widget>[
-                Column(
-                  children: const [
-                    flofaubotons(
-                      image: "assets/aves.png",
-                      texto: "Aves",
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    flofaubotons(
-                      image: "assets/mamiferos.png",
-                      texto: "Mamiferos",
-                    ),
-                    SizedBox(height: 8.0),
-                    flofaubotons(
-                      image: "assets/reptiles.jpg",
-                      texto: "Reptiles",
-                    ),
-                    SizedBox(height: 8.0),
-                    flofaubotons(
-                      image: "assets/anfibios.png",
-                      texto: "Anfibios",
-                    ),
-                    SizedBox(height: 8.0),
-                    flofaubotons(
-                      image: "assets/peces.jpg",
-                      texto: "Peces",
-                    ),
-                    SizedBox(height: 8.0),
-                    flofaubotons(
-                      image: "assets/insectos.jpg",
-                      texto: "Insectos",
-                    )
-                  ],
-                )
-              ],
-            )
-          ])
-        ],
+            Stack(children: [
+              Column(
+                children: <Widget>[
+                  Column(
+                    children: const [
+                      flofaubotons(
+                        image: "assets/aves.png",
+                        texto: "Aves",
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
+                      flofaubotons(
+                        image: "assets/mamiferos.png",
+                        texto: "Mamiferos",
+                      ),
+                      SizedBox(height: 8.0),
+                      flofaubotons(
+                        image: "assets/reptiles.jpg",
+                        texto: "Reptiles",
+                      ),
+                      SizedBox(height: 8.0),
+                      flofaubotons(
+                        image: "assets/anfibios.png",
+                        texto: "Anfibios",
+                      ),
+                      SizedBox(height: 8.0),
+                      flofaubotons(
+                        image: "assets/peces.jpg",
+                        texto: "Peces",
+                      ),
+                      SizedBox(height: 8.0),
+                      flofaubotons(
+                        image: "assets/insectos.jpg",
+                        texto: "Insectos",
+                      )
+                    ],
+                  )
+                ],
+              )
+            ])
+          ],
+        ),
       ),
       bottomNavigationBar: const MyBottomAppBar(
           web: "web.iiap.gob.pe",

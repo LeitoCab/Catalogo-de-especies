@@ -23,53 +23,53 @@ class _FloraState extends State<Flora> {
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
         backgroundColor: const Color(0xe552c084),
       ),
-      body: ListView(
-        children: [
-          Image.asset(
-            'assets/descarga.jpg',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Center(
-            child: Text(
-              'FLORA',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.6,
+                image: AssetImage("assets/Amazonia.jpg"),
+                fit: BoxFit.cover)),
+        child: ListView(
+          children: [
+            Image.asset(
+              'assets/descarga.jpg',
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Center(
+              child: Text(
+                'FLORA',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Stack(children: [
-            Opacity(
-              opacity: 0.6,
-              child: Image.asset(
-                'assets/Amazonia.jpg',
-                height: 600,
-              ),
+            const SizedBox(
+              height: 32,
             ),
-            Column(
-              children: <Widget>[
-                Column(
-                  children: const [
-                    flofaubotons(
-                      image: "assets/arboles.jpg",
-                      texto: "Arboles",
-                    ),
-                    SizedBox(
-                      height: 32.0,
-                    ),
-                    flofaubotons(
-                        texto: "Palmeras", image: "assets/palmeras.png")
-                  ],
-                )
-              ],
-            )
-          ])
-        ],
+            Stack(children: [
+              Column(
+                children: <Widget>[
+                  Column(
+                    children: const [
+                      flofaubotons(
+                        image: "assets/arboles.jpg",
+                        texto: "Arboles",
+                      ),
+                      SizedBox(
+                        height: 32.0,
+                      ),
+                      flofaubotons(
+                          texto: "Palmeras", image: "assets/palmeras.png")
+                    ],
+                  )
+                ],
+              )
+            ])
+          ],
+        ),
       ),
       bottomNavigationBar: const MyBottomAppBar(
           web: "web.iiap.gob.pe",
